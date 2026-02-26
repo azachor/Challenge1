@@ -233,6 +233,16 @@ st.write("1. Allocate additional marketing investment toward the highest revenue
 st.write("2. Design targeted retention strategies for the lowest revenue segment to mitigate potential customer decline.")
 st.write("3. Rebalance channel and product focus toward combinations generating the highest revenue concentration.")
 
+decline_percentage = (decline_revenue / total_revenue) * 100 if total revenue > 0 else 0
+
+st.subheader("Early Warning Indicator")
+
+if decline_percentage > 25:
+    st.error(f"Decline Segment Revenue is {decline_percentage:.2f}% of total revenue."
+else:
+    st.success(f"Decline Segment Revenue is {decline_percentage:.2f}% of total revenue."
+    
+
 # -------------------- DISPLAY DATA --------------------
 st.markdown("## Filtered Dataset")
 st.dataframe(filtered_df.reset_index(drop=True))
